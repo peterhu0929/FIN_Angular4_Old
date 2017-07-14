@@ -1,0 +1,61 @@
+
+<md-toolbar class="app-toolbar" color="primary">
+  <button md-icon-button [toolbarButton] (click)="sidenav.toggle()">
+    <md-icon>subject</md-icon>
+  </button>
+  <img class="toolbar-logo" alt="Home" title="Home" src={{logoSrc}}>
+  <span>{{title}}</span>
+  <span class="fill-remaining-space"></span>
+  <button md-button (click)="BackToCatogory()"><md-icon>face</md-icon></button>
+  <button md-button (click)="Logout()"><md-icon>input</md-icon></button>
+</md-toolbar>
+
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav class="sidenav" #sidenav mode={{sidenavMode}} opened={{sidenavOpen}}>
+    <md-nav-list>
+      <a md-list-item [routerLink]="['/home']">
+        <md-icon md-list-icon>Home</md-icon>
+        <span md-line>Home</span>
+        <span md-line class="secondary">Home</span>
+      </a>
+      <a md-list-item [routerLink]="['/about']">
+        <md-icon md-list-icon>About</md-icon>
+        <span md-line>About</span>
+        <span md-line class="secondary">About</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <section role="content" class="sidenav-content">
+
+    <div [@routeAnimation]="prepRouteState(routerOutlet)">
+      <router-outlet #routerOutlet="outlet"></router-outlet>
+    </div>
+  </section>
+</md-sidenav-container>
+
+
+
+<!-- <p>
+  main works!
+</p>
+<button md-raised-button (click)="Logout()">Logout</button>
+<div id="container" [@listAnimation]="items.length">
+
+  <button (click)="pushItem()">Add item</button>
+  <button (click)="removeItem()">Remove item</button>
+
+  <div id="list" *ngFor="let item of items">
+    {{ item }}
+  </div>
+
+  <div @explainerAnim>
+    <div class="col">
+      <p>I think Coursetro is one of the best learning resources online for Angular</p>
+    </div>
+    <div class="col">
+      <p>I think Coursetro is one of the best learning resources online for Angular</p>
+    </div>
+    <div class="col">
+      <p>I think Coursetro is one of the best learning resources online for Angular</p>
+    </div>
+  </div> -->

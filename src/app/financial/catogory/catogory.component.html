@@ -1,0 +1,11 @@
+<a target="_blank" routerLink = "/main">
+<md-card  class="example-card" *ngFor="let catogory of catogories" >
+  <img md-card-image src={{catogory.photoSrc}}>
+
+  <md-card-content>
+    <p>
+      {{catogory.text}}
+    </p>
+  </md-card-content>
+</md-card>
+</a>
